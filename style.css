@@ -69,3 +69,20 @@ button:hover {
       transform: translateY(0);
   }
 }
+
+.pulse {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #ff0000;
+  border-radius: 10px;
+  text-align: center;
+  animation: pulse-animation 2s infinite;
+}
+
+font{
+  font-size: 13px;
+}

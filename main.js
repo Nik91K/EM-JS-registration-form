@@ -8,41 +8,41 @@ document.getElementById('myform').addEventListener('submit', function(e) {
   var text = el.text.value;
   var password = el.password.value;
   var number = el.number.value;
-  // перевірка
+  // check
   var error = '';
   if (firstname.length < 2) {
-    error = 'Ім\'я занадто мале';
+    error = 'The name is too small';
   } else if (lastname.length < 2) {
-    error = 'Прізвище занадто мале';
+    error = 'The last name is too small';
   } else if (email.length < 2) {
-    error = 'Email занадто малий';
+    error = 'Email is too small';
   } else if (!email.includes('@')) {
-    error = 'Email не має @';
+    error = 'Email does not have @';
   } else if (text.length < 2) {
-    error = 'Short description занадто мале';
+    error = 'Short description is too short';
   } else if (password.length < 8) {
-    error = 'Пароль занадто малий';
+    error = 'The password is too small';
   } else if (password.length > 16) {
-    error = 'Пароль занадто великий';
+    error = 'The password is too long';
   } else if (!/[A-Z]/.test(password)) {
-    error = 'Пароль має містити хоча б одну велику літеру';
+    error = 'The password must contain at least one capital letter';
   } else if (!/[a-z]/.test(password)) {
-    error = 'Пароль має містити хоча б одну маленьку літеру';
+    error = 'The password must contain at least one lowercase letter';
   } else if (!/[0-9]/.test(password)) {
-    error = 'Пароль має містити хоча б одне число';
+    error = 'Password must contain at least one number';
   } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
     error = 'Пароль має містити хоча б один спецсимвол';
   } else if (!/^\+38\d{3}\d{7}$/.test(number)) {
-    error = 'Номер телефону має бути у форматі +38XXXYYYYYYY';
+    error = 'The phone number must be in the format +38XXXYYYYYYY';
   } else if (number. length < 8) {
-    error = "Номер телефону занадто малий"
+    error = "The phone number is too small"
   }
 
   if (error != '') {
     document.getElementById('error').innerText = error;
     return false;
   }
-  // створення файлу
+  // creating a file
   var userData = {
     firstname: firstname,
     lastname: lastname,
@@ -61,10 +61,10 @@ document.getElementById('myform').addEventListener('submit', function(e) {
   document.body.appendChild(link);
   link.click();
   link.parentNode.removeChild(link);
-  // перенесення на нову сторінку
+  // moving to a new page
   document.getElementById('error').innerText = '';
   window.location = 'after_registration.html';
-
+  //
   document.getElementById('error').innerText = '';
   return false;
 });

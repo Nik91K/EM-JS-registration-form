@@ -2,12 +2,12 @@ document.getElementById('myform').addEventListener('submit', function(e) {
   e.preventDefault();
   // 
   var el = document.getElementById('myform');
-  var firstname = el.firstname.value;
-  var lastname = el.lastname.value;
-  var email = el.email.value;
-  var text = el.text.value;
-  var password = el.password.value;
-  var number = el.number.value;
+  var firstname = el.firstname.value.trim();
+  var lastname = el.lastname.value.trim();
+  var email = el.email.value.trim();
+  var text = el.text.value.trim();
+  var password = el.password.value.trim();
+  var number = el.number.value.trim();
   // check
   var error = '';
   if (firstname.length < 2) {
